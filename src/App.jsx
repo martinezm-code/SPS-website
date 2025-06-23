@@ -10,13 +10,21 @@ import AlternatingServiceRow from './components/AlternatingServiceRow';
 import RoadDivider from './components/RoadDivider';
 import ContactForm from './components/ContactForm';
 
+// Import all homepage service images
+import hardSurfacingImg from './images/Asphalt/shutterstock_1941199573.jpg';
+import softSurfacingImg from './images/Sod/shutterstock_2147130193.jpg';
+import wellpointImg from './images/Wellpoint/shutterstock_2134606583.jpg';
+import fullRestorationImg from './images/Concrete/shutterstock_1705717126.jpg';
+import gradingImg from './images/Wellpoint/shutterstock_1492191365.jpg';
+import utilityRepairImg from './images/Concrete/shutterstock_1588624192.jpg';
+
 // Service data for home page
 const services = [
 	{
 		title: 'Hard Surfacing',
 		description:
 			'Durable concrete, asphalt, and other hard surfaces for driveways, walkways, and parking lots. We deliver long-lasting, attractive results for all your paving needs.',
-		imgSrc: '/src/images/Asphalt/shutterstock_1941199573.jpg',
+		imgSrc: hardSurfacingImg,
 		imgAlt: 'Hard Surfacing',
 		reverse: false,
 	},
@@ -24,7 +32,7 @@ const services = [
 		title: 'Soft Surfacing',
 		description:
 			'Safe, functional, and visually appealing surfacing for streets, neighborhoods, and highways. We use high-quality materials to ensure safety and curb appeal.',
-		imgSrc: '/src/images/Sod/shutterstock_2147130193.jpg',
+		imgSrc: softSurfacingImg,
 		imgAlt: 'Soft Surfacing',
 		reverse: true,
 	},
@@ -32,7 +40,7 @@ const services = [
 		title: 'WellPoint Dewatering',
 		description:
 			'Efficient groundwater management to keep your worksite dry and secure. Our dewatering solutions are tailored to your site’s needs for safe and effective project execution.',
-		imgSrc: '/src/images/Wellpoint/shutterstock_2134606583.jpg',
+		imgSrc: wellpointImg,
 		imgAlt: 'WellPoint Dewatering',
 		reverse: false,
 	},
@@ -40,7 +48,7 @@ const services = [
 		title: 'Full Restoration',
 		description:
 			'Complete restoration from assessment to final touches, including storm and water damage. We restore your property to its best condition, efficiently and professionally.',
-		imgSrc: '/src/images/Concrete/shutterstock_1705717126.jpg',
+		imgSrc: fullRestorationImg,
 		imgAlt: 'Full Restoration',
 		reverse: true,
 	},
@@ -48,7 +56,7 @@ const services = [
 		title: 'Grading & Earth Work',
 		description:
 			'Site preparation, excavation, and leveling for stability and optimal drainage. Our team ensures your project starts with a solid foundation and proper grading for long-term success.',
-		imgSrc: '/src/images/Wellpoint/shutterstock_1492191365.jpg',
+		imgSrc: gradingImg,
 		imgAlt: 'Grading & Earth Work',
 		reverse: false,
 	},
@@ -56,7 +64,7 @@ const services = [
 		title: 'Utility Repair',
 		description:
 			'Repair and maintenance of underground utility systems, including water, sewer, and electrical infrastructure. We use advanced techniques to minimize disruption and ensure reliability.',
-		imgSrc: '/src/images/Concrete/shutterstock_1588624192.jpg',
+		imgSrc: utilityRepairImg,
 		imgAlt: 'Utility Repair',
 		reverse: true,
 	},
@@ -144,8 +152,7 @@ function App() {
 							<span className="font-semibold text-black">best materials</span>{' '}
 							and{' '}
 							<span className="font-semibold text-black">proven techniques</span>{' '}
-							to deliver results that last. Whether it’s a small repair or a
-							large-scale restoration, we approach every task with the same{' '}
+
 							<span className="font-bold text-yellow-700">
 								commitment to excellence
 							</span>
