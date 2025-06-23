@@ -1,0 +1,90 @@
+@import "tailwindcss";
+/* Base CSS for layout and typography */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #222;
+  background: #fffbe6;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #fffbe6;
+}
+
+header {
+  background: #fff;
+  color: #222;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav a {
+  color: #FF6F00;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: #FFD600;
+}
+
+.main-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem 2rem 1rem;
+  background: linear-gradient(180deg, #fff 0%, #fffbe6 100%);
+}
+.hero-text {
+  flex: 1 1 320px;
+  max-width: 500px;
+  margin-right: 2rem;
+}
+.hero-img {
+  flex: 1 1 320px;
+  min-width: 300px;
+  min-height: 220px;
+  background: #eee;
+  border: 3px solid #FFD600;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+.service-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 2rem 1.5rem;
+  max-width: 320px;
+  flex: 1 1 260px;
+  border-left: 6px solid #FFD600;
+}
+.service-card h2 {
+  color: #FF6F00;
+  margin-top: 0;
+}
+footer {
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  color: #fff;
+  background: #222;
+  margin-top: 2rem;
+}
