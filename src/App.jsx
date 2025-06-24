@@ -73,17 +73,17 @@ const services = [
 function App() {
 	// Main Home Page Content
 	const Home = () => (
-		<div className="min-h-screen bg-white text-black font-sans flex flex-col">
+		<div className="min-h-screen bg-white text-black font-sans flex flex-col overflow-x-hidden">
 			<Header />
 
 			{/* Hero Section */}
-			<section className="relative w-full h-[400px] md:h-[600px] flex items-center justify-center bg-black border-b border-gray-100 overflow-hidden">
+			<section className="relative w-full min-h-[300px] md:h-[600px] flex items-center justify-center bg-black border-b border-gray-100 overflow-hidden">
 				<img
 					src={heroImg}
 					alt="SPS Hero"
-					className="absolute inset-0 w-full h-full object-cover object-center z-0"
+					className="absolute inset-0 w-full h-full max-w-full object-cover object-center z-0"
 				/>
-				<div className="relative z-10 flex flex-col items-center justify-center w-full h-full bg-black/40 text-white text-center px-4">
+				<div className="relative z-10 flex flex-col items-center justify-center w-full h-full bg-black/40 text-white text-center px-2 sm:px-4">
 					<h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
 						Southern Pavement Specialists
 					</h1>
@@ -110,7 +110,7 @@ function App() {
 					<h2 className="text-4xl font-extrabold mb-6 text-yellow-600">
 						About Us
 					</h2>
-					<div className="bg-yellow-50 shadow-lg border border-yellow-200 rounded-xl p-8 text-left">
+					<div className="bg-yellow-50 shadow-lg border border-yellow-200 rounded-xl p-4 sm:p-8 text-left break-words max-w-full">
 						<p className="text-lg text-gray-800 leading-relaxed indent-8 mb-6">
 							<span className="font-bold text-yellow-700">
 								Southern Pavement Specialists

@@ -13,6 +13,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: #fffbe6;
+  overflow-x: hidden;
 }
 
 header {
