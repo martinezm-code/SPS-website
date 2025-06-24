@@ -84,9 +84,16 @@ function App() {
 			<section className="relative w-full min-h-[300px] md:h-[600px] flex items-center justify-center bg-black border-b border-gray-100 overflow-hidden">
 				<picture>
 					<source
+						srcSet="/src/images/hero-road-construction-mobile.webp"
+						type="image/webp"
+						media="(max-width: 767px)"
+						sizes="100vw"
+					/>
+					<source
 						srcSet={heroImg}
 						type="image/webp"
-						sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
+						media="(min-width: 768px)"
+						sizes="100vw"
 					/>
 					<img
 						src={heroImg}
@@ -98,7 +105,7 @@ function App() {
 						width={1920}
 						height={600}
 						style={{ aspectRatio: '16/5', backgroundColor: '#222' }}
-						sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
+						sizes="100vw"
 					/>
 				</picture>
 				<div className="relative z-10 flex flex-col items-center justify-center w-full h-full bg-black/40 text-white text-center px-2 sm:px-4">
