@@ -9,6 +9,10 @@ import heroImg from './images/shutterstock_1244171479.jpg';
 import AlternatingServiceRow from './components/AlternatingServiceRow';
 import RoadDivider from './components/RoadDivider';
 import ContactForm from './components/ContactForm';
+import About from './About';
+import ConcreteServices from './ConcreteServices';
+import PaversServices from './PaversServices';
+import AsphaltServices from './AsphaltServices';
 
 // Import all homepage service images
 import hardSurfacingImg from './images/Asphalt/shutterstock_1941199573.jpg';
@@ -82,6 +86,12 @@ function App() {
 					src={heroImg}
 					alt="SPS Hero"
 					className="absolute inset-0 w-full h-full max-w-full object-cover object-center z-0"
+					loading="eager"
+					fetchpriority="high"
+					decoding="async"
+					width={1920}
+					height={600}
+					style={{ aspectRatio: '16/5', backgroundColor: '#222' }}
 				/>
 				<div className="relative z-10 flex flex-col items-center justify-center w-full h-full bg-black/40 text-white text-center px-2 sm:px-4">
 					<h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
@@ -144,7 +154,7 @@ function App() {
 							<span className="font-bold text-yellow-700">
 								minimizing disruption
 							</span>{' '}
-							and{' '}
+
 							<span className="font-bold text-yellow-700">
 								maximizing value
 							</span>
@@ -214,6 +224,10 @@ function App() {
 				<Route path="/soft-surfacing" element={<SoftSurfacingV2 />} />
 				<Route path="/wellpoint-dewatering" element={<WellPointDewateringV2 />} />
 				<Route path="/utility-repair" element={<UtilityRepairV2 />} />
+				<Route path="/about" element={<About />} />
+				<Route path="/concrete" element={<ConcreteServices />} />
+				<Route path="/pavers" element={<PaversServices />} />
+				<Route path="/asphalt" element={<AsphaltServices />} />
 			</Routes>
 		</Router>
 	);
