@@ -2,11 +2,11 @@ import './index.css';
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ServicesGrid, ServiceCard } from './components/ServicesGrid';
-import asphaltImg from './images/Asphalt/shutterstock_1941199573.jpg';
-import concreteImg from './images/Concrete/shutterstock_1705717126.jpg';
-import paversImg from './images/Concrete/shutterstock_2272955959.jpg';
+import asphaltImg from './images/Asphalt/asphalt-parking-lot.webp';
+import concreteImg from './images/Concrete/concrete-driveway-finish.webp';
+import paversImg from './images/Concrete/concrete-paver-walkway.webp';
 
-import spsLogo from './images/SPS LOGO _ NEW.jpg';
+import spsLogo from './images/sps-logo.webp';
 import Header from './Header';
 
 function HardSurfacingV2() {

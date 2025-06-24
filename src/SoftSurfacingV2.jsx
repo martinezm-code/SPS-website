@@ -3,9 +3,9 @@ import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import { ServicesGrid, ServiceCard } from './components/ServicesGrid';
-import millingImg from './images/Asphalt/shutterstock_2256489041.jpg';
-import resurfacingImg from './images/Asphalt/shutterstock_1113930644.jpg';
-import StrippingMarkingImg from './images/shutterstock_1675715131.jpg';
+import millingImg from './images/Asphalt/asphalt-freshly-paved.webp';
+import resurfacingImg from './images/Asphalt/asphalt-road-roller.webp';
+import StrippingMarkingImg from './images/Sod/sod-lawn-installation.webp';
 
 function SoftSurfacingV2() {
   const [showDropdown, setShowDropdown] = useState(false);

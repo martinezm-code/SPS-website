@@ -3,9 +3,9 @@ import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import { ServicesGrid, ServiceCard } from './components/ServicesGrid';
-import wellPointImg from './images/Wellpoint/shutterstock_2134606583.jpg';
-import pumpImg from './images/Wellpoint/shutterstock_762113866.jpg';
-import backFillingImg from './images/Wellpoint/shutterstock_1492191365.jpg';
+import wellPointImg from './images/Wellpoint/wellpoint-dewatering-pump.webp';
+import pumpImg from './images/Wellpoint/wellpoint-system-installation.webp';
+import backFillingImg from './images/Wellpoint/wellpoint-pipes.webp';
 
 function WellPointDewateringV2() {
   const [showDropdown, setShowDropdown] = useState(false);

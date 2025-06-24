@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import paversImg from './images/Concrete/shutterstock_2272955959.jpg';
+import paversImg from './images/Concrete/concrete-paver-walkway.webp';
 
 function PaversServices() {
   return (

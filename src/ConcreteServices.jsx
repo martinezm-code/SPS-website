@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import concreteImg from './images/Concrete/shutterstock_1705717126.jpg';
+import concreteImg from './images/Concrete/concrete-driveway-finish.webp';
 
 function ConcreteServices() {
   return (
