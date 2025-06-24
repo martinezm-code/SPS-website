@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import spsLogo from './images/SPS LOGO _ NEW.jpg';
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback, useMemo } from 'react';
 
 function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -9,24 +9,38 @@ function Header() {
   const closeTimeout = useRef();
   const location = useLocation();
 
-  const handleDropdownEnter = () => {
+  // Memoize nav link classes for performance
+  const navLinkClass = useCallback(
+    (path) => `hover:text-yellow-500 transition-colors${location.pathname === path ? ' text-yellow-600 font-bold' : ''}`,
+    [location.pathname]
+  );
+
+  // Memoize dropdown links
+  const serviceLinks = useMemo(() => [
+    { to: '/hard-surfacing', label: 'Hard Surfaces' },
+    { to: '/soft-surfacing', label: 'Soft Surfaces' },
+    { to: '/wellpoint-dewatering', label: 'WellPoint Dewatering' },
+    { to: '/utility-repair', label: 'Utility Repair' },
+  ], []);
+
+  const handleDropdownEnter = useCallback(() => {
     clearTimeout(closeTimeout.current);
     setShowDropdown(true);
-  };
-  const handleDropdownLeave = () => {
+  }, []);
+  const handleDropdownLeave = useCallback(() => {
     closeTimeout.current = setTimeout(() => setShowDropdown(false), 300);
-  };
+  }, []);
 
   return (
     <header className="bg-white shadow pt-4 pb-0 px-4 sm:px-6 flex justify-between items-center sticky top-0 z-50 border-b border-gray-200 min-h-[64px] relative overflow-visible w-full">
       <div className="h-full flex flex-col justify-between items-start absolute left-0 top-0 bottom-0 z-20 pl-2 sm:pl-4" style={{height: '100%', minHeight: '64px'}}>
         <Link to="/" className="block h-full w-full">
-          <img src={spsLogo} alt="SPS Logo" className="h-full w-auto object-contain" style={{maxHeight: '64px', minHeight: '100%'}} />
+          <img src={spsLogo} alt="SPS Logo" className="h-full w-auto object-contain" style={{maxHeight: '64px', minHeight: '100%'}} loading="lazy" />
         </Link>
       </div>
       {/* Desktop Nav */}
       <nav className="hidden md:flex space-x-6 items-center relative ml-24 w-full justify-end">
-        <Link to="/" className={`hover:text-yellow-500 transition-colors${location.pathname === '/' ? ' text-yellow-600 font-bold' : ''}`}>Home</Link>
+        <Link to="/" className={navLinkClass('/')} >Home</Link>
         <div
           className="inline-block relative"
           onMouseEnter={handleDropdownEnter}
@@ -41,14 +55,13 @@ function Header() {
               onMouseEnter={handleDropdownEnter}
               onMouseLeave={handleDropdownLeave}
             >
-              <Link to="/hard-surfacing" className="block px-4 py-2 hover:bg-yellow-100 hover:text-yellow-700 transition-colors">Hard Surfaces</Link>
-              <Link to="/soft-surfacing" className="block px-4 py-2 hover:bg-yellow-100 hover:text-yellow-700 transition-colors">Soft Surfaces</Link>
-              <Link to="/wellpoint-dewatering" className="block px-4 py-2 hover:bg-yellow-100 hover:text-yellow-700 transition-colors">WellPoint Dewatering</Link>
-              <Link to="/utility-repair" className="block px-4 py-2 hover:bg-yellow-100 hover:text-yellow-700 transition-colors">Utility Repair</Link>
+              {serviceLinks.map(link => (
+                <Link key={link.to} to={link.to} className="block px-4 py-2 hover:bg-yellow-100 hover:text-yellow-700 transition-colors">{link.label}</Link>
+              ))}
             </div>
           )}
         </div>
-        <Link to="/about" className={`hover:text-yellow-500 transition-colors${location.pathname === '/about' ? ' text-yellow-600 font-bold' : ''}`}>About</Link>
+        <Link to="/about" className={navLinkClass('/about')}>About</Link>
         <a href="#contact" className="hover:text-yellow-500 transition-colors">Contact</a>
       </nav>
       {/* Hamburger for Mobile */}
@@ -90,10 +103,9 @@ function Header() {
         </button>
         {mobileServicesOpen && (
           <div className="pl-4 flex flex-col">
-            <Link to="/hard-surfacing" className="py-2 px-2 hover:text-yellow-700" onClick={() => setMobileMenuOpen(false)}>Hard Surfaces</Link>
-            <Link to="/soft-surfacing" className="py-2 px-2 hover:text-yellow-700" onClick={() => setMobileMenuOpen(false)}>Soft Surfaces</Link>
-            <Link to="/wellpoint-dewatering" className="py-2 px-2 hover:text-yellow-700" onClick={() => setMobileMenuOpen(false)}>WellPoint Dewatering</Link>
-            <Link to="/utility-repair" className="py-2 px-2 hover:text-yellow-700" onClick={() => setMobileMenuOpen(false)}>Utility Repair</Link>
+            {serviceLinks.map(link => (
+              <Link key={link.to} to={link.to} className="py-2 px-2 hover:text-yellow-700" onClick={() => setMobileMenuOpen(false)}>{link.label}</Link>
+            ))}
           </div>
         )}
         <Link to="/about" className={`block py-3 px-2 text-lg font-bold border-b border-gray-100 hover:text-yellow-600${location.pathname === '/about' ? ' text-yellow-600' : ''}`} onClick={() => setMobileMenuOpen(false)}>About</Link>

@@ -40,18 +40,21 @@ function HardSurfacingV2() {
             alt="Concrete"
             title="Concrete"
             items={["Driveways, sidewalks, curbs","ADA-compliant ramps","Decorative & stamped concrete","Repairs & maintenance"]}
+            moreLink="/concrete"
           />
           <ServiceCard
             image={asphaltImg}
             alt="Asphalt"
             title="Asphalt"
             items={["Paving & patching","Parking lots & roadways","Surface repairs","Sealcoating"]}
+            moreLink="/asphalt"
           />
           <ServiceCard
             image={paversImg}
             alt="Pavers"
             title="Pavers"
             items={["Patios & walkways","Custom designs","Repairs & relays","Edging & borders"]}
+            moreLink="/pavers"
           />
         </ServicesGrid>
         {/* More About Section */}
