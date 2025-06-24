@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import spsLogo from './images/SPS LOGO _ NEW.jpg';
+import spsLogo from './images/sps-logo.webp';
 import { useState, useRef, useCallback, useMemo } from 'react';
 
 function Header() {

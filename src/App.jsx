@@ -5,7 +5,7 @@ import SoftSurfacingV2 from './SoftSurfacingV2';
 import WellPointDewateringV2 from './WellPointDewateringV2';
 import UtilityRepairV2 from './UtilityRepairV2';
 import Header from './Header';
-import heroImg from './images/shutterstock_1244171479.jpg';
+import heroImg from './images/hero-road-construction.webp';
 import AlternatingServiceRow from './components/AlternatingServiceRow';
 import RoadDivider from './components/RoadDivider';
 import ContactForm from './components/ContactForm';
@@ -15,12 +15,12 @@ import PaversServices from './PaversServices';
 import AsphaltServices from './AsphaltServices';
 
 // Import all homepage service images
-import hardSurfacingImg from './images/Asphalt/shutterstock_1941199573.jpg';
-import softSurfacingImg from './images/Sod/shutterstock_2147130193.jpg';
-import wellpointImg from './images/Wellpoint/shutterstock_2134606583.jpg';
-import fullRestorationImg from './images/Concrete/shutterstock_1705717126.jpg';
-import gradingImg from './images/Wellpoint/shutterstock_1492191365.jpg';
-import utilityRepairImg from './images/Concrete/shutterstock_1588624192.jpg';
+import hardSurfacingImg from './images/Asphalt/asphalt-parking-lot.webp';
+import softSurfacingImg from './images/Sod/sod-lawn-installation.webp';
+import wellpointImg from './images/Wellpoint/wellpoint-dewatering-pump.webp';
+import fullRestorationImg from './images/Concrete/concrete-sidewalk-crew.webp';
+import gradingImg from './images/Wellpoint/wellpoint-pipes.webp';
+import utilityRepairImg from './images/Concrete/concrete-curb-installation.webp';
 
 // Service data for home page
 const services = [

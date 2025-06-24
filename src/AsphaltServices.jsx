@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import asphaltImg from './images/Asphalt/shutterstock_1941199573.jpg';
+import asphaltImg from './images/Asphalt/asphalt-parking-lot.webp';
 
 function AsphaltServices() {
   return (
