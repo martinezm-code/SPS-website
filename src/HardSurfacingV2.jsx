@@ -28,6 +28,20 @@ function HardSurfacingV2() {
       {/* Hero Section */}
       <section className="relative bg-black text-white py-16 px-4 flex flex-col items-center justify-center text-center">
         <div className="absolute inset-0 bg-[url('/public/vite.svg')] bg-cover bg-center opacity-10 pointer-events-none" />
+        <picture>
+          <source srcSet="/src/images/hero-road-construction.webp" type="image/webp" />
+          <img
+            src="/src/images/hero-road-construction.webp"
+            alt="SPS Hero"
+            className="absolute inset-0 w-full h-full max-w-full object-cover object-center z-0"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width={1920}
+            height={600}
+            style={{ aspectRatio: '16/5', backgroundColor: '#222' }}
+          />
+        </picture>
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 z-10">Hard Surface restoration</h1>
         <p className="text-lg md:text-2xl max-w-2xl mx-auto z-10">Expert installation and repair of concrete, asphalt, and paver surfaces for commercial and residential projects. Quality, safety, and durability—guaranteed.</p>
       </section>

@@ -82,17 +82,25 @@ function App() {
 
 			{/* Hero Section */}
 			<section className="relative w-full min-h-[300px] md:h-[600px] flex items-center justify-center bg-black border-b border-gray-100 overflow-hidden">
-				<img
-					src={heroImg}
-					alt="SPS Hero"
-					className="absolute inset-0 w-full h-full max-w-full object-cover object-center z-0"
-					loading="eager"
-					fetchpriority="high"
-					decoding="async"
-					width={1920}
-					height={600}
-					style={{ aspectRatio: '16/5', backgroundColor: '#222' }}
-				/>
+				<picture>
+					<source
+						srcSet={heroImg}
+						type="image/webp"
+						sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
+					/>
+					<img
+						src={heroImg}
+						alt="SPS Hero"
+						className="absolute inset-0 w-full h-full max-w-full object-cover object-center z-0"
+						loading="eager"
+						fetchpriority="high"
+						decoding="async"
+						width={1920}
+						height={600}
+						style={{ aspectRatio: '16/5', backgroundColor: '#222' }}
+						sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
+					/>
+				</picture>
 				<div className="relative z-10 flex flex-col items-center justify-center w-full h-full bg-black/40 text-white text-center px-2 sm:px-4">
 					<h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
 						Southern Pavement Specialists

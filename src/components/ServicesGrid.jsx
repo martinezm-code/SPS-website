@@ -14,7 +14,23 @@ export function ServiceCard({ image, alt, title, items, moreLink }) {
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 pt-4 pb-8 px-4 flex flex-col items-center text-center min-w-0">
       <div className="w-full aspect-square mb-6 bg-gray-100 rounded-xl border border-yellow-400 overflow-hidden flex items-center justify-center">
         {image ? (
-          <img src={image} alt={alt} className="object-cover w-full h-full block" />
+          <picture>
+            <source
+              srcSet={image}
+              type="image/webp"
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 350px"
+            />
+            <img
+              src={image}
+              alt={alt}
+              className="object-cover w-full h-full block"
+              width={350}
+              height={350}
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 350px"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         ) : (
           <span className="text-gray-400">[Image]</span>
         )}

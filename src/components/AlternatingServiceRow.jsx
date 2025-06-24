@@ -27,17 +27,25 @@ function ServiceTextBlock({ title, description, reverse }) {
 function ServiceImageBlock({ imgSrc, imgAlt, reverse }) {
   return (
     <div className={'flex-1 flex items-stretch w-full max-w-full ' + (reverse ? 'order-1 md:order-2' : '')}>
-      <img
-        src={imgSrc}
-        alt={imgAlt}
-        className={
-          'w-full h-full max-w-full object-cover object-center rounded-none ' +
-          (reverse
-            ? 'md:rounded-l-3xl md:rounded-r-none'
-            : 'md:rounded-r-3xl md:rounded-l-none')
-        }
-        style={{ minHeight: '220px', maxHeight: '600px' }}
-      />
+      <picture>
+        <source srcSet={imgSrc} type="image/webp" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px" />
+        <img
+          src={imgSrc}
+          alt={imgAlt}
+          className={
+            'w-full h-full max-w-full object-cover object-center rounded-none ' +
+            (reverse
+              ? 'md:rounded-l-3xl md:rounded-r-none'
+              : 'md:rounded-r-3xl md:rounded-l-none')
+          }
+          style={{ minHeight: '220px', maxHeight: '600px' }}
+          width={600}
+          height={400}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
     </div>
   );
 }
