@@ -35,7 +35,10 @@ function Header() {
     <header className="bg-white shadow pt-4 pb-0 px-4 sm:px-6 flex justify-between items-center sticky top-0 z-50 border-b border-gray-200 min-h-[64px] relative overflow-visible w-full">
       <div className="h-full flex flex-col justify-between items-start absolute left-0 top-0 bottom-0 z-20 pl-2 sm:pl-4" style={{height: '100%', minHeight: '64px'}}>
         <Link to="/" className="block h-full w-full">
-          <img src={spsLogo} alt="SPS Logo" className="h-full w-auto object-contain" style={{maxHeight: '64px', minHeight: '100%'}} loading="lazy" />
+          <picture>
+            <source srcSet={spsLogo} type="image/webp" />
+            <img src={spsLogo} alt="SPS Logo" className="h-full w-auto object-contain" style={{maxHeight: '64px', minHeight: '100%'}} loading="lazy" />
+          </picture>
         </Link>
       </div>
       {/* Desktop Nav */}
