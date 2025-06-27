@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import RoadDivider from './components/RoadDivider';
+import ContactForm from './components/ContactForm';
 
 function About() {
   return (
@@ -47,6 +48,12 @@ function About() {
           </div>
         </div>
         <RoadDivider />
+      </section>
+      {/* Contact Form Section */}
+      <section className="w-full bg-gray-50 py-16 px-4 md:px-24 border-b border-gray-100 flex flex-col items-center">
+        <h2 className="text-3xl font-extrabold mb-6 text-yellow-600 text-center">Contact SPS</h2>
+        <ContactForm />
+        <a href="#contact" className="mt-8 inline-block px-8 py-3 bg-yellow-400 text-black font-bold rounded-full shadow hover:bg-yellow-500 transition text-lg">Request a Consultation</a>
       </section>
       <footer className="w-full text-center py-6 bg-black text-white mt-auto">
         &copy; {new Date().getFullYear()} SPS Restoration. All rights reserved.

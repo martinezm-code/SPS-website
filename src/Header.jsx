@@ -17,10 +17,10 @@ function Header() {
 
   // Memoize dropdown links
   const serviceLinks = useMemo(() => [
-    { to: '/hard-surfacing', label: 'Hard Surfaces' },
-    { to: '/soft-surfacing', label: 'Soft Surfaces' },
-    { to: '/wellpoint-dewatering', label: 'WellPoint Dewatering' },
-    { to: '/utility-repair', label: 'Utility Repair' },
+    { to: '/asphalt', label: 'Asphalt' },
+    { to: '/concrete', label: 'Concrete' },
+    { to: '/dewatering', label: 'Dewatering' },
+    { to: '/other-services', label: 'Other Services' },
   ], []);
 
   const handleDropdownEnter = useCallback(() => {
@@ -58,6 +58,7 @@ function Header() {
               onMouseEnter={handleDropdownEnter}
               onMouseLeave={handleDropdownLeave}
             >
+              <Link to="/services" className="block px-4 py-2 font-semibold text-yellow-700 hover:bg-yellow-100 hover:text-yellow-900 transition-colors border-b border-gray-100">All Services</Link>
               {serviceLinks.map(link => (
                 <Link key={link.to} to={link.to} className="block px-4 py-2 hover:bg-yellow-100 hover:text-yellow-700 transition-colors">{link.label}</Link>
               ))}
@@ -106,6 +107,7 @@ function Header() {
         </button>
         {mobileServicesOpen && (
           <div className="pl-4 flex flex-col">
+            <Link to="/services" className="py-2 px-2 font-semibold text-yellow-700 hover:bg-yellow-100 hover:text-yellow-900 transition-colors border-b border-gray-100" onClick={() => setMobileMenuOpen(false)}>All Services</Link>
             {serviceLinks.map(link => (
               <Link key={link.to} to={link.to} className="py-2 px-2 hover:text-yellow-700" onClick={() => setMobileMenuOpen(false)}>{link.label}</Link>
             ))}
