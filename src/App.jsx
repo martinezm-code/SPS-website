@@ -1,5 +1,5 @@
 import './index.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from './Header';
 import heroImg from './images/hero-road-construction.webp';
 import ContactForm from './components/ContactForm';
@@ -108,16 +108,30 @@ function App() {
 
 			{/* Services Section */}
 			<section id="services" className="w-full py-16 px-4 bg-gray-100 md:my-16">
-				<h2 className="text-4xl font-extrabold text-center mb-10 text-yellow-600 relative inline-block after:block after:w-24 after:h-1 after:bg-yellow-400 after:rounded-full after:mx-auto after:mt-2 animate-pulse">Our Services</h2>
-				<div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+				<h2 className="text-4xl font-extrabold text-center mb-10 text-yellow-600 relative inline-block mx-auto after:block after:w-24 after:h-1 after:bg-yellow-400 after:rounded-full after:mx-auto after:mt-2 animate-pulse">
+					Our Services
+				</h2>
+				<div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
 					{services.map((service) => (
-						<div key={service.title} className="group bg-white border border-gray-100 rounded-2xl shadow-lg p-0 flex flex-col items-stretch text-center hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-							<img src={service.imgSrc} alt={service.imgAlt} className="w-full h-40 object-cover rounded-t-2xl mb-0" loading="lazy" />
+						<div
+							key={service.title}
+							className="group bg-white border border-gray-100 rounded-2xl shadow-lg p-0 flex flex-col items-stretch text-center hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+						>
+							<img
+								src={service.imgSrc}
+								alt={service.imgAlt}
+								className="w-full h-40 object-cover rounded-t-2xl mb-0"
+								loading="lazy"
+							/>
 							<div className="flex flex-col flex-1 p-6">
-								<h3 className="text-2xl font-bold text-yellow-700 mb-2 group-hover:text-yellow-600 transition-colors duration-300">{service.title}</h3>
-								<p className="text-gray-700 text-base mb-4">{service.description}</p>
-								<a
-									href={
+								<h3 className="text-2xl font-bold text-yellow-700 mb-2 group-hover:text-yellow-600 transition-colors duration-300">
+									{service.title}
+								</h3>
+								<p className="text-gray-700 text-base mb-4">
+									{service.description}
+								</p>
+								<Link
+									to={
 										service.title === 'Hard Surfacing'
 											? '/asphalt'
 											: service.title === 'Soft Surfacing'
@@ -135,7 +149,7 @@ function App() {
 									className="inline-block mt-auto px-6 py-2 bg-yellow-400 text-black font-semibold rounded shadow hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 transition"
 								>
 									Learn More
-								</a>
+								</Link>
 							</div>
 						</div>
 					))}
